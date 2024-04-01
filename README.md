@@ -19,16 +19,16 @@ Aplicación que ayuda a los usuarios a mantenerse saludables y en forma a travé
     
 **Activities:**
 
-  • Inicio de sesión y registro de usuarios: Permite a los usuarios crear una cuenta y acceder a la aplicación.
+  • Inicio de sesión y registro de usuarios: Permite a los usuarios crear una cuenta y acceder a la aplicación. (ENOC)
 	
   • Perfil del usuario: Muestra la información personal del usuario, como nombre, edad, sexo, altura, peso y 
-    objetivos de salud.
+    objetivos de salud. (ENOC)
 		
   • Registro de actividad física: Permite a los usuarios registrar manualmente distancia recorrida y calorías 
-    quemadas.
+    quemadas. (ROBERTO)
 		
   • Registro de ejercicios y entrenamiento: Permite a los usuarios registrar sus entrenamientos y actividades 
-    físicas, incluyendo el tipo de ejercicio, la duración, la intensidad y las calorías quemadas.
+    físicas, incluyendo el tipo de ejercicio, la duración, la intensidad y las calorías quemadas. (ROBERTO)
 		
   • Calendario de actividad: Muestra un calendario con la actividad física del usuario, incluyendo los pasos, la 
     distancia recorrida y las calorías quemadas.
@@ -40,13 +40,13 @@ Aplicación que ayuda a los usuarios a mantenerse saludables y en forma a travé
     y estadísticas.
 		
   • Consejos de salud: Ofrece consejos personalizados para mejorar la dieta, el sueño y otros aspectos de la 
-    salud del usuario.
+    salud del usuario. (RENE)
 		
   • Recordatorios de medicamentos y vitaminas: Notifica a los usuarios cuándo deben tomar sus 
-    medicamentos o vitaminas, con la posibilidad de personalizar alarmas y notificaciones.
+    medicamentos o vitaminas, con la posibilidad de personalizar alarmas y notificaciones. 
 		
   • Foro de salud: Un espacio donde los usuarios pueden compartir sus experiencias, hacer preguntas y recibir 
-    apoyo de otros usuarios.
+    apoyo de otros usuarios. (RENE)
     
 **Tecnologías a implementar:**
 
