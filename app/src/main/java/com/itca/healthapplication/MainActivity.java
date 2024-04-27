@@ -9,19 +9,20 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView salud;
+    ImageView perfil, foro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        salud = findViewById(R.id.ivSalud);
+        perfil = findViewById(R.id.ivPerfil);
+        foro = findViewById(R.id.ivForo);
 
-        salud.setOnClickListener(new View.OnClickListener() {
+        perfil  .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Login.class );
+                Intent intent = new Intent(MainActivity.this, Perfil.class );
                 startActivity(intent);
             }
         });
