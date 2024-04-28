@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView perfil, foro;
+    ImageView perfil, consejos, rgEntremiento, rgFisica;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +17,35 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         perfil = findViewById(R.id.ivPerfil);
-        foro = findViewById(R.id.ivForo);
+        consejos = findViewById(R.id.ivConsejos);
+        rgEntremiento = findViewById(R.id.ivEjercicio);
+        rgFisica = findViewById(R.id.ivFisica);
 
-        perfil  .setOnClickListener(new View.OnClickListener() {
+        perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Perfil.class );
+                startActivity(intent);
+            }
+        });
+
+        consejos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Perfil.class );
+                startActivity(intent);
+            }
+        });
+
+        rgEntremiento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Perfil.class );
+                startActivity(intent);
+            }
+        });
+
+        rgFisica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Perfil.class );
