@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HealthApplication</string>
+    <string name="MENU">MENU</string>
+
 </resources>
