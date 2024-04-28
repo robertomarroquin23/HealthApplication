@@ -1,3 +1,8 @@
+**INTEGRANTES**
+Ariel Enoc Carbajal Amaya.
+René Armando Sanchez Platero.
+Roberto Francisco Marroquín Osorio.
+
 **HEALTH APP**
 
 **Descripción:**
