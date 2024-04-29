@@ -16,7 +16,7 @@
         android:id="@+id/imagen1"
         android:layout_marginRight="10dp"
         android:layout_centerVertical="true"
-        android:src="@drawable/imagen1"
+
         />
 
     <TextView

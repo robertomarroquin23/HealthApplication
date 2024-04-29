@@ -6,18 +6,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Consejos extends AppCompatActivity implements MyAdapter.OnItemClickListener {
 
-
+    ImageView btn_regresar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consejos);
-
+        btn_regresar =findViewById(R.id.btn_regresar);
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         List<Item> items = new ArrayList<Item>();
 
@@ -36,7 +39,14 @@ public class Consejos extends AppCompatActivity implements MyAdapter.OnItemClick
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter); // Usar la instancia del adaptador ya creada
 
+   btn_regresar.setOnClickListener(new View.OnClickListener() {
+       @Override
+       public void onClick(View v) {
+           Intent intent = new Intent(Consejos.this, MainActivity.class);
 
+           startActivity(intent);
+       }
+   });
 
     }
 
@@ -50,4 +60,7 @@ public class Consejos extends AppCompatActivity implements MyAdapter.OnItemClick
 
         startActivity(intent);
     }
+
+
+
 }
