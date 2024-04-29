@@ -13,6 +13,12 @@
         android:theme="@style/Theme.HealthApplication"
         tools:targetApi="31">
         <activity
+            android:name=".Articulos"
+            android:exported="false" />
+        <activity
+            android:name=".Item"
+            android:exported="false" />
+        <activity
             android:name=".Registrar"
             android:exported="false" />
         <activity
@@ -29,6 +35,9 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+        <activity
+            android:name=".Consejos"
+            android:exported="false"/>
         <activity
             android:name=".Login"
             android:exported="true">
