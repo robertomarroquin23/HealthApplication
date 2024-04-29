@@ -31,9 +31,9 @@ public class RegisterAdapter extends ArrayAdapter<String> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.registro_items, parent, false);
+        View view = inflater.inflate(R.layout.registro_item, parent, false);
 
-        @SuppressLint("MissingInflatedId") TextView tvItem = view.findViewById(R.id.tvItem); // Assuming the TextView ID in registro_item.xml
+        TextView tvItem = view.findViewById(R.id.tvItem); // Assuming the TextView ID in registro_item.xml
         tvItem.setText(registros.get(position));
 
         return view;
