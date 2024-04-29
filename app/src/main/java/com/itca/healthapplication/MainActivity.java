@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView perfil, consejos, rgEntremiento, rgFisica;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
