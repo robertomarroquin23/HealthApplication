@@ -16,7 +16,7 @@
             android:name=".Articulos"
             android:exported="false" />
         <activity
-            android:name=".Item"
+            android:name=".ConfigRecycler.Item"
             android:exported="false" />
         <activity
             android:name=".Registrar"

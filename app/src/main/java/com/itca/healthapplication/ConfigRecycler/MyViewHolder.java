@@ -1,4 +1,4 @@
-package com.itca.healthapplication;
+package com.itca.healthapplication.ConfigRecycler;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.itca.healthapplication.R;
 
 public class MyViewHolder extends RecyclerView.ViewHolder {
     ImageView imageView ;

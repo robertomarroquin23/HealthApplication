@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
+
+import com.itca.healthapplication.ConfigRecycler.Item;
+import com.itca.healthapplication.ConfigRecycler.MyAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.itca.healthapplication;
+package com.itca.healthapplication.ConfigRecycler;
 
 import android.os.Bundle;
 
