@@ -33,7 +33,7 @@ Aplicación que ayuda a los usuarios a mantenerse saludables y en forma a travé
     objetivos de salud. (ENOC)
 		
   • Registro de actividad física: Permite a los usuarios registrar manualmente distancia recorrida y calorías 
-    quemadas. (ROBERTO)
+    quemadas. (ROBERTO) (Done)
 		
   • Registro de ejercicios y entrenamiento: Permite a los usuarios registrar sus entrenamientos y actividades 
     físicas, incluyendo el tipo de ejercicio, la duración, la intensidad y las calorías quemadas. (ROBERTO)
