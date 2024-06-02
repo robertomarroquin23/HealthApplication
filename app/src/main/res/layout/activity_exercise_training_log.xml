@@ -1,48 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/fondo"
     android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
     <EditText
-        android:id="@+id/etDistance"
+        android:id="@+id/editTextDistancia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Distancia recorrida (en km)"
-        android:inputType="numberDecimal" />\
+        android:autofillHints=""
+        android:hint="@string/distancia_km"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:textColorHint="#00695C"
+        tools:ignore="TextContrastCheck" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <EditText
-        android:id="@+id/etCalories"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Calorías quemadas"
-        android:inputType="number" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/buttonAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guardar registro" />
+        android:text="@string/agregar"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/actualizar"/>
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/eliminar"/>
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/listViewCalorias"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
