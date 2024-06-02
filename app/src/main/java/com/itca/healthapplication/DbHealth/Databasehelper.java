@@ -1,8 +1,11 @@
 package com.itca.healthapplication.DbHealth;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -15,15 +18,16 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        Log.d(TAG, "onCreate: Creating database and table");
+
         db.execSQL(Article_table.SQL_CREATE);
-     //   db.execSQL(ProductTable.SQL_CREATE);
         preLoadData(db);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(Article_table.SQL_DELETE);
-      //  db.execSQL(ProductTable.SQL_DELETE);
+
         onCreate(db);
     }
 
@@ -58,17 +62,17 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL("INSERT INTO " + Article_table.TABLE_NAME + " (" +
                 Article_table.COLUMN_TITULO + ", " + Article_table.COLUMN_CONSEJO + ") " +
-                "VALUES ('Prevención de enfermedades infecciosas', '\"Prevenir infecciones mediante vacunas es una práctica fundamental en salud pública.\\n\"+\"    Inmunización contra enfermedades infecciosas: Las vacunas son herramientas importantes para prevenir enfermedades infecciosas, como el sarampión, la poliomielitis, la influenza, la hepatitis, entre otras. Estas enfermedades pueden ser graves e incluso mortales en algunos casos, pero la vacunación puede ayudar a prevenirlas.\\n\" +\n" +
-                "                       \"\\n\" +\n" +
-                "                       \"    1.Funcionamiento de las vacunas: Las vacunas contienen partes debilitadas o inactivadas de los patógenos que causan enfermedades. Al introducir estas partes en el cuerpo, el sistema inmunológico reconoce los antígenos y produce una respuesta inmunitaria, que incluye la producción de anticuerpos. Estos anticuerpos permiten al cuerpo reconocer y combatir el patógeno en caso de exposición futura, lo que previene la infección o reduce su gravedad.\\n\" +\n" +
-                "                       \"\\n\" +\n" +
-                "                       \"    2.Inmunidad colectiva (o inmunidad de rebaño): La vacunación no solo protege a la persona vacunada, sino que también contribuye a proteger a la comunidad en su conjunto. Cuando una gran proporción de la población está vacunada contra una enfermedad, se reduce la propagación del patógeno, lo que proporciona protección a las personas que no pueden recibir la vacuna, como aquellos con sistemas inmunológicos debilitados o alergias a los componentes de la vacuna.\\n\" +\n" +
-                "                       \"\\n\" +\n" +
-                "                       \"    3.Calendario de vacunación: Cada país tiene un calendario de vacunación recomendado que especifica cuándo se deben administrar diferentes vacunas a lo largo de la vida, desde la infancia hasta la edad adulta. Es importante seguir este calendario para asegurar una protección óptima contra enfermedades infecciosas.\\n\" +\n" +
-                "                       \"\\n\" +\n" +
-                "                       \"    4.Seguridad y eficacia: Las vacunas pasan por rigurosos ensayos clínicos para garantizar su seguridad y eficacia antes de ser aprobadas para su uso. Los organismos reguladores de la salud, como la Administración de Alimentos y Medicamentos (FDA) en Estados Unidos, supervisan el proceso de desarrollo y autorizan el uso de vacunas que cumplen con los estándares de seguridad y eficacia.\\n\" +\n" +
-                "                       \"\\n\" +\n" +
-                "                       \"    5.Educación y conciencia: La educación pública sobre la importancia de la vacunación y la desmitificación de mitos y falsas creencias sobre las vacunas son fundamentales para aumentar las tasas de vacunación y prevenir enfermedades infecciosas.\"');");
+                "VALUES ('Prevención de enfermedades infecciosas', '\"Prevenir infecciones mediante vacunas es una práctica fundamental en salud pública. Inmunización contra enfermedades infecciosas: Las vacunas son herramientas importantes para prevenir enfermedades infecciosas, como el sarampión, la poliomielitis, la influenza, la hepatitis, entre otras. Estas enfermedades pueden ser graves e incluso mortales en algunos casos, pero la vacunación puede ayudar a prevenirlas.\n"  +
+
+                "\"1.Funcionamiento de las vacunas: Las vacunas contienen partes debilitadas o inactivadas de los patógenos que causan enfermedades. Al introducir estas partes en el cuerpo, el sistema inmunológico reconoce los antígenos y produce una respuesta inmunitaria, que incluye la producción de anticuerpos. Estos anticuerpos permiten al cuerpo reconocer y combatir el patógeno en caso de exposición futura, lo que previene la infección o reduce su gravedad.\n"  +
+
+                "\"2.Inmunidad colectiva (o inmunidad de rebaño): La vacunación no solo protege a la persona vacunada, sino que también contribuye a proteger a la comunidad en su conjunto. Cuando una gran proporción de la población está vacunada contra una enfermedad, se reduce la propagación del patógeno, lo que proporciona protección a las personas que no pueden recibir la vacuna, como aquellos con sistemas inmunológicos debilitados o alergias a los componentes de la vacuna.\n"  +
+
+                "\"3.Calendario de vacunación: Cada país tiene un calendario de vacunación recomendado que especifica cuándo se deben administrar diferentes vacunas a lo largo de la vida, desde la infancia hasta la edad adulta. Es importante seguir este calendario para asegurar una protección óptima contra enfermedades infecciosas.\n"  +
+
+                "\"4.Seguridad y eficacia: Las vacunas pasan por rigurosos ensayos clínicos para garantizar su seguridad y eficacia antes de ser aprobadas para su uso. Los organismos reguladores de la salud, como la Administración de Alimentos y Medicamentos (FDA) en Estados Unidos, supervisan el proceso de desarrollo y autorizan el uso de vacunas que cumplen con los estándares de seguridad y eficacia.\n" +
+
+                "\"5.Educación y conciencia: La educación pública sobre la importancia de la vacunación y la desmitificación de mitos y falsas creencias sobre las vacunas son fundamentales para aumentar las tasas de vacunación y prevenir enfermedades infecciosas.\"');");
 
         db.execSQL("INSERT INTO " + Article_table.TABLE_NAME + " (" +
                 Article_table.COLUMN_TITULO + ", " + Article_table.COLUMN_CONSEJO + ") " +

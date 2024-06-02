@@ -13,6 +13,9 @@
         android:theme="@style/Theme.HealthApplication"
         tools:targetApi="31">
         <activity
+            android:name=".audiosRelajacion"
+            android:exported="false" />
+        <activity
             android:name=".Articulos"
             android:exported="false" />
         <activity
@@ -23,12 +26,10 @@
             android:exported="false" />
         <activity
             android:name=".Perfil"
-            android:exported="false"/>
-        
+            android:exported="false" />
         <activity
             android:name=".View.MainView.ExerciseTrainingLog"
             android:exported="false" />
-
         <activity
             android:name=".View.MainView.PhysicalActivityLog"
             android:exported="false" />
@@ -37,7 +38,7 @@
             android:exported="false" />
         <activity
             android:name=".Consejos"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Login"
             android:exported="true">

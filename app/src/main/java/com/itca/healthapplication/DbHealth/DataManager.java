@@ -22,13 +22,8 @@ public class DataManager {
             dbHelper.close();
         }
 
-        // Métodos CRUD para la tabla de usuarios
-        public long addArticle(String titulo, String consejo ) {
-            ContentValues values = new ContentValues();
-            values.put(Article_table.COLUMN_TITULO, titulo);
-            values.put(Article_table.COLUMN_CONSEJO, consejo);
-            return database.insert(Article_table.TABLE_NAME, null, values);
-        }
+        // Métodos la tabla de usuarios
+
 
         public Cursor getArticle(long id) {
             String[] columns = {
@@ -42,6 +37,10 @@ public class DataManager {
         }
 
 
+    public void deleteAllData() {
+        database.delete(Article_table.TABLE_NAME, null, null);
+    }
+
     public Cursor getAllData(){
         String[] columns = {"_id","titulo","consejo"};
 
@@ -49,11 +48,7 @@ public class DataManager {
 
     }
 
-        public int deleteUser(long id) {
-            String selection = Article_table.COLUMN_ID + " = ?";
-            String[] selectionArgs = { String.valueOf(id) };
-            return database.delete(Article_table.TABLE_NAME, selection, selectionArgs);
-        }
+
 
 
 
