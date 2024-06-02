@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.itca.healthapplication.View.MainView.ExerciseTrainingLog;
+import com.itca.healthapplication.View.MainView.PhysicalActivityLog;
+
 public class MainActivity extends AppCompatActivity {
 
     ImageView perfil, consejos, rgEntremiento, rgFisica;
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         consejos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Perfil.class );
+                Intent intent = new Intent(MainActivity.this, Consejos.class );
                 startActivity(intent);
             }
         });
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         rgEntremiento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Perfil.class );
+                Intent intent = new Intent(MainActivity.this, ExerciseTrainingLog.class );
                 startActivity(intent);
             }
         });
@@ -50,9 +53,10 @@ public class MainActivity extends AppCompatActivity {
         rgFisica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Perfil.class );
+                Intent intent = new Intent(MainActivity.this, PhysicalActivityLog.class );
                 startActivity(intent);
             }
         });
     }
 }
+
