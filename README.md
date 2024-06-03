@@ -36,7 +36,7 @@ Aplicación que ayuda a los usuarios a mantenerse saludables y en forma a travé
     quemadas. (ROBERTO) (Done)
 		
   • Registro de ejercicios y entrenamiento: Permite a los usuarios registrar sus entrenamientos y actividades 
-    físicas, incluyendo el tipo de ejercicio, la duración, la intensidad y las calorías quemadas. (ROBERTO)
+    físicas, incluyendo el tipo de ejercicio, la duración, la intensidad y las calorías quemadas. (ROBERTO) (Done)
 		
   • Calendario de actividad: Muestra un calendario con la actividad física del usuario, incluyendo los pasos, la 
     distancia recorrida y las calorías quemadas.
