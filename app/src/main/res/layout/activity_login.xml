@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.135"
+        app:layout_constraintVertical_bias="0.154"
         app:srcCompat="@drawable/login" />
 
     <EditText
@@ -25,6 +25,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Ingrese su contraseña"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hint_gray"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,6 +41,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Ingrese su usuario"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hint_gray"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

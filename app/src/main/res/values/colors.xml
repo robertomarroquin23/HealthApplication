@@ -6,4 +6,5 @@
     <color name="blue">#FF4d92d6</color>
     <color name="green">#FF67a364</color>
     <color name="purple">#FF7800FF</color>
+    <color name="hint_gray">#808080</color>
 </resources>

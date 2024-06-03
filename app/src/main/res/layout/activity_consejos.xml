@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="37dp"
         android:layout_alignParentEnd="true"
+        android:textColor="@color/black"
         android:layout_marginEnd="0dp"
         android:text="Consejos y Articulos"
         android:textSize="20dp"

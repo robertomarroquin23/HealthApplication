@@ -18,7 +18,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.d(TAG, "onCreate: Creating database and table");
+
 
         db.execSQL(Article_table.SQL_CREATE);
         preLoadData(db);
@@ -26,7 +26,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(Article_table.SQL_DELETE);
+        //db.execSQL(Article_table.SQL_DELETE);
 
         onCreate(db);
     }

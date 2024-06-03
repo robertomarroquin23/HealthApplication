@@ -8,9 +8,10 @@
     android:id="@+id/imageIcon"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textview"
+        android:id="@+id/tituloaudio"
+        android:layout_width="223dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
         android:gravity="center"
-        android:text="My text"/>
+        android:text="My text" />
 </LinearLayout>

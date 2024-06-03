@@ -22,7 +22,7 @@ public class DataManager {
             dbHelper.close();
         }
 
-        // Métodos la tabla de usuarios
+        // Métodos las tablas
 
 
         public Cursor getArticle(long id) {
@@ -47,6 +47,7 @@ public class DataManager {
         return  database.query("Article_table",columns,null,null,null,null,null);
 
     }
+
 
 
 
