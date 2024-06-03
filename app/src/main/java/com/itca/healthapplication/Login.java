@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.itca.healthapplication.DbHealth.DataManager;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -22,6 +22,7 @@ public class Login extends AppCompatActivity {
     Button btConfirmar;
     EditText etUser, etPass;
     TextView registrar;
+    DataManager dataManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,19 +34,8 @@ public class Login extends AppCompatActivity {
         etPass = findViewById(R.id.etPasswd);
         registrar = findViewById(R.id.tvRegistrar);
 
-        btConfirmar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (etUser.getText().toString().equals("Rene") && etPass.getText().toString().equals("1234"))
-                {
-                    Intent intent = new Intent(Login.this, MainActivity.class);
-                    startActivity(intent);
-                }else{
-
-                    Toast.makeText(Login.this, "Usuario o contraseña incorrecta", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+        dataManager = new DataManager(this);
+        dataManager.open();
 
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,5 +44,30 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btConfirmar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String usuario = etUser.getText().toString().trim();
+                String password = etPass.getText().toString().trim();
+
+                if (dataManager.authenticateUser(usuario, password)) {
+                    // User exists and password matches
+                    Intent intent = new Intent(Login.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    // User does not exist or password does not match
+                    Toast.makeText(Login.this, "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
+
+        @Override
+        protected void onDestroy() {
+            super.onDestroy();
+            dataManager.close();
+        }
+
 }

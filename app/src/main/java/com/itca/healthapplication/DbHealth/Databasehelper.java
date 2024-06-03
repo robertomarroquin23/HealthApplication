@@ -2,6 +2,7 @@ package com.itca.healthapplication.DbHealth;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -19,7 +20,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         Log.d(TAG, "onCreate: Creating database and table");
-
+        db.execSQL(Users_table.SQL_CREATE);
         db.execSQL(Article_table.SQL_CREATE);
         preLoadData(db);
     }
@@ -27,7 +28,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(Article_table.SQL_DELETE);
-
+        db.execSQL(Users_table.SQL_DELETE);
         onCreate(db);
     }
 
@@ -95,7 +96,15 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public long insertUser(String usuario, String correo, String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(Users_table.COLUMN_USUARIO, usuario);
+        values.put(Users_table.COLUMN_CORREO, correo);
+        values.put(Users_table.COLUMN_PASSWORD, password);
 
-
-
+        long newRowId = db.insert(Users_table.TABLE_NAME, null, values);
+        db.close();
+        return newRowId;
+    }
 }

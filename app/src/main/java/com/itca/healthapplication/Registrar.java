@@ -4,18 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
-
-import androidx.activity.EdgeToEdge;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import com.itca.healthapplication.DbHealth.DataManager;
+
+
 
 public class Registrar extends AppCompatActivity {
 
+
     ImageView flecha;
     Button btGuardar;
+    private EditText etUsuario, etCorreo, etPassword, etConfirmarPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,16 +26,42 @@ public class Registrar extends AppCompatActivity {
 
         flecha = findViewById(R.id.ivFlecha);
         btGuardar = findViewById(R.id.btGuardar);
+        etUsuario = findViewById(R.id.etUsuario);
+        etCorreo = findViewById(R.id.etCorreo);
+        etPassword = findViewById(R.id.etPasswd);
+        etConfirmarPassword = findViewById(R.id.etConfirmarPasswd);
 
-        flecha.setOnClickListener(new View.OnClickListener() {
+        btGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Registrar.this, Login.class);
-                startActivity(intent);
+                String usuario = etUsuario.getText().toString();
+                String correo = etCorreo.getText().toString();
+                String password = etPassword.getText().toString();
+                String confirmarPassword = etConfirmarPassword.getText().toString();
+
+                if (password.equals(confirmarPassword)) {
+                    DataManager dataManager = new DataManager(Registrar.this);
+                    dataManager.open();
+                    long newRowId = dataManager.insertUser(usuario, correo, password);
+                    dataManager.close();
+
+                    if (newRowId != -1) {
+                        Toast.makeText(Registrar.this, "Usuario agregado exitosamente", Toast.LENGTH_SHORT).show();
+                        etUsuario.setText("");
+                        etCorreo.setText("");
+                        etPassword.setText("");
+                        etConfirmarPassword.setText("");
+                    } else {
+                        Toast.makeText(Registrar.this, "Error al agregar el usuario", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(Registrar.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
-        btGuardar.setOnClickListener(new View.OnClickListener() {
+
+        flecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Registrar.this, Login.class);
