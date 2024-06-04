@@ -39,6 +39,12 @@
     <ListView
         android:id="@+id/listViewCalorias"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="392dp"
+        android:textColor="@color/black"/>
 
+    <ImageView
+        android:id="@+id/btnback"
+        android:layout_width="81dp"
+        android:layout_height="109dp"
+        android:src="@drawable/flecharegreso" />
 </LinearLayout>
