@@ -56,6 +56,12 @@
         android:layout_height="wrap_content"
         android:text="Eliminar"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tipo de ejercicio  Duracion  Intencidad  Calorias quemadas"
+        android:gravity="center"/>
+
     <ListView
         android:id="@+id/listViewEntrenamientos"
         android:layout_width="match_parent"
