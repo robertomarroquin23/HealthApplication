@@ -13,7 +13,7 @@ import com.itca.healthapplication.View.MainView.PhysicalActivityLog;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView perfil, consejos, rgEntremiento, rgFisica;
+    ImageView perfil, consejos, rgEntremiento, rgFisica ,Audio,Video;
 
 
 
@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         consejos = findViewById(R.id.ivConsejos);
         rgEntremiento = findViewById(R.id.ivEjercicio);
         rgFisica = findViewById(R.id.ivFisica);
+        Audio = findViewById(R.id.Audio);
+        Video = findViewById(R.id.Video);
 
         Intent valor = getIntent();
         String valorUsuario = valor.getStringExtra("usuario");
@@ -65,6 +67,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, VideosRutinas.class );
+                startActivity(intent);
+            }
+        });
+
+        Audio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, audiosRelajacion.class );
+                startActivity(intent);
+            }
+        });
+
     }
 }
 

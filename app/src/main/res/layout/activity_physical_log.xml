@@ -1,10 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.MainView.PhysicalActivityLog">
+    android:orientation="vertical"
+    android:background="@drawable/fondo"
+    android:padding="16dp">
+    <EditText
+        android:id="@+id/editTextTipoEjercicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#00695C"
+        android:hint="Tipo de Ejercicio"
+        android:inputType="text"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/editTextDuracion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#00695C"
+        android:hint="@string/duraci_n_min"
+        android:inputType="number"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/editTextIntensidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#00695C"
+        android:hint="Intensidad"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/editTextCalorias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Calorías Quemadas"
+        android:textColorHint="#00695C"
+        android:inputType="numberDecimal"/>
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agregar"/>
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Actualizar"/>
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eliminar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tipo de ejercicio  Duracion  Intencidad  Calorias quemadas"
+        android:gravity="center"/>
+
+    <ListView
+        android:id="@+id/listViewEntrenamientos"
+        android:layout_width="match_parent"
+        android:layout_height="268dp"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:id="@+id/btnback"
+        android:layout_width="81dp"
+        android:layout_height="109dp"
+        android:src="@drawable/flecharegreso"
+        android:contentDescription="@string/todo" />
+</LinearLayout>

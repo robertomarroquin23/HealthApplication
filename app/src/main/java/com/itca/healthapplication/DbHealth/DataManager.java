@@ -23,6 +23,9 @@ public class DataManager {
             dbHelper.close();
         }
 
+        public String userTemporal;
+
+
     public long insertUser(String usuario, String correo, String password) {
         ContentValues values = new ContentValues();
         values.put(Users_table.COLUMN_USUARIO, usuario);
@@ -53,12 +56,14 @@ public class DataManager {
 
         String selection = Users_table.COLUMN_USUARIO + " = ?";
         String[] selectionArgs = {username};
+        userTemporal = username;
 
         return database.query(
                 Users_table.TABLE_NAME,
                 columns,
                 selection,
                 selectionArgs,
+                userTemporal,
                 null,
                 null,
                 null
@@ -108,6 +113,5 @@ public class DataManager {
         String[] columns = {"_id","titulo","consejo"};
 
         return  database.query("Article_table",columns,null,null,null,null,null);
-
     }
 }
