@@ -1,10 +1,12 @@
 package com.itca.healthapplication.View.MainView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -16,6 +18,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.itca.healthapplication.CaloriesDAO.CaloriesDao;
 import com.itca.healthapplication.Class.RegisterAdapter;
+import com.itca.healthapplication.Consejos;
+import com.itca.healthapplication.MainActivity;
 import com.itca.healthapplication.R;
 
 import java.util.ArrayList;
@@ -27,6 +31,8 @@ public class ExerciseTrainingLog extends AppCompatActivity {
     private ListView listViewCalorias;
     private SimpleCursorAdapter adapter;
     private long selectedId = -1;
+
+    ImageView btn_regresar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +47,16 @@ public class ExerciseTrainingLog extends AppCompatActivity {
         Button buttonAdd = findViewById(R.id.buttonAdd);
         Button buttonUpdate = findViewById(R.id.buttonUpdate);
         Button buttonDelete = findViewById(R.id.buttonDelete);
+        btn_regresar =findViewById(R.id.btnback);
+
+        btn_regresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ExerciseTrainingLog.this, MainActivity.class);
+
+                startActivity(intent);
+            }
+        });
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
