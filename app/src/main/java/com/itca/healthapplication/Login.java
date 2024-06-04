@@ -1,6 +1,8 @@
 package com.itca.healthapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.util.Linkify;
 import android.view.View;
@@ -48,26 +50,22 @@ public class Login extends AppCompatActivity {
         btConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String usuario = etUser.getText().toString().trim();
-                String password = etPass.getText().toString().trim();
+                String usuario = etUser.getText().toString();
+                String password = etPass.getText().toString();
 
-                if (dataManager.authenticateUser(usuario, password)) {
-                    // User exists and password matches
+                if(dataManager.authenticateUser(usuario, password) ) {
+
                     Intent intent = new Intent(Login.this, MainActivity.class);
+                    intent.putExtra("usuario", usuario);
+                    //Toast.makeText(Login.this, "Usuario obtenido " + usuario, Toast.LENGTH_SHORT).show();
+                    dataManager.close();
                     startActivity(intent);
                     finish();
+
                 } else {
-                    // User does not exist or password does not match
                     Toast.makeText(Login.this, "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
-
-        @Override
-        protected void onDestroy() {
-            super.onDestroy();
-            dataManager.close();
-        }
-
 }

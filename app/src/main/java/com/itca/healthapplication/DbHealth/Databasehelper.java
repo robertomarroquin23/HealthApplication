@@ -27,12 +27,10 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(Article_table.SQL_DELETE);
+        //db.execSQL(Article_table.SQL_DELETE);
         db.execSQL(Users_table.SQL_DELETE);
         onCreate(db);
     }
-
-
 
     private void preLoadData(SQLiteDatabase db) {
 
@@ -94,17 +92,5 @@ class DatabaseHelper extends SQLiteOpenHelper {
                 "\n" +
                 "Diferentes personas necesitan diferentes cantidades de horas de sueño. La mayoría de los adultos necesitan de 7 a 8 horas de sueño por noche para una buena salud y funcionamiento mental. Algunos adultos necesitan hasta 9 horas de sueño por noche.');");
 
-    }
-
-    public long insertUser(String usuario, String correo, String password) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(Users_table.COLUMN_USUARIO, usuario);
-        values.put(Users_table.COLUMN_CORREO, correo);
-        values.put(Users_table.COLUMN_PASSWORD, password);
-
-        long newRowId = db.insert(Users_table.TABLE_NAME, null, values);
-        db.close();
-        return newRowId;
     }
 }

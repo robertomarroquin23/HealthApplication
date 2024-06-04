@@ -12,6 +12,7 @@ public class DataManager {
 
         public DataManager(Context context) {
             dbHelper = new DatabaseHelper(context);
+            database = dbHelper.getWritableDatabase();
         }
 
         public void open() {
@@ -22,8 +23,6 @@ public class DataManager {
             dbHelper.close();
         }
 
-        // Métodos la tabla de usuarios
-
     public long insertUser(String usuario, String correo, String password) {
         ContentValues values = new ContentValues();
         values.put(Users_table.COLUMN_USUARIO, usuario);
@@ -33,8 +32,51 @@ public class DataManager {
         return database.insert(Users_table.TABLE_NAME, null, values);
     }
 
+    public boolean isUserExists(String usuario) {
+        String[] columns = { Users_table.COLUMN_ID };
+        String selection = Users_table.COLUMN_USUARIO + " = ?";
+        String[] selectionArgs = { usuario };
+        Cursor cursor = database.query(Users_table.TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+        int cursorCount = cursor.getCount();
+        cursor.close();
+        return cursorCount > 0;
+    }
 
-        public Cursor getArticle(long id) {
+    public Cursor getUserData(String username) {
+        String[] columns = {
+                Users_table.COLUMN_USUARIO,
+                Users_table.COLUMN_ALTURA,
+                Users_table.COLUMN_PESO,
+                Users_table.COLUMN_EDAD,
+                Users_table.COLUMN_NACIONALIDAD
+        };
+
+        String selection = Users_table.COLUMN_USUARIO + " = ?";
+        String[] selectionArgs = {username};
+
+        return database.query(
+                Users_table.TABLE_NAME,
+                columns,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
+        );
+    }
+
+    public int updateUserData(String antiguoUser, String nuevoUsuario, String nuevaAltura, String nuevoPeso, String nuevaEdad, String nuevaNacionalidad) {
+        ContentValues values = new ContentValues();
+        values.put("usuario", nuevoUsuario);
+        values.put("altura", nuevaAltura);
+        values.put("peso", nuevoPeso);
+        values.put("edad", nuevaEdad);
+        values.put("nacionalidad", nuevaNacionalidad);
+
+        return database.update("Users_table", values, "usuario = ?", new String[]{String.valueOf(antiguoUser)});
+    }
+
+    public Cursor getArticle(long id) {
             String[] columns = {
                     Article_table.COLUMN_ID,
                     Article_table.COLUMN_TITULO,
@@ -68,9 +110,4 @@ public class DataManager {
         return  database.query("Article_table",columns,null,null,null,null,null);
 
     }
-
 }
-
-
-
-

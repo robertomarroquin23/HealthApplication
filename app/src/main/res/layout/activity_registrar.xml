@@ -98,6 +98,6 @@
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintVertical_bias="0.976"
         app:srcCompat="@drawable/flecharegreso" />
 </androidx.constraintlayout.widget.ConstraintLayout>
