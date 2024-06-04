@@ -1,10 +1,12 @@
 package com.itca.healthapplication.View.MainView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -15,6 +17,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.itca.healthapplication.CaloriesDAO.TrainingDAO;
+import com.itca.healthapplication.MainActivity;
 import com.itca.healthapplication.R;
 
 public class PhysicalActivityLog extends AppCompatActivity {
@@ -23,6 +26,8 @@ public class PhysicalActivityLog extends AppCompatActivity {
     private ListView listViewEntrenamientos;
     private SimpleCursorAdapter adapter;
     private long selectedId = -1;
+
+    ImageView btnRegresar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +43,15 @@ public class PhysicalActivityLog extends AppCompatActivity {
         Button buttonAdd = findViewById(R.id.buttonAdd);
         Button buttonUpdate = findViewById(R.id.buttonUpdate);
         Button buttonDelete = findViewById(R.id.buttonDelete);
+        btnRegresar = findViewById(R.id.btnback);
+        btnRegresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PhysicalActivityLog.this, MainActivity.class);
+
+                startActivity(intent);
+            }
+        });
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
