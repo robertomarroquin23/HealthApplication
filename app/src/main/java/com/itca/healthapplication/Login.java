@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.itca.healthapplication.Class.UserTemporal;
 import com.itca.healthapplication.DbHealth.DataManager;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,14 +52,14 @@ public class Login extends AppCompatActivity {
         btConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String usuario = etUser.getText().toString();
-                String password = etPass.getText().toString();
+                String usuario = etUser.getText().toString().trim();
+                String password = etPass.getText().toString().trim();
 
                 if(dataManager.authenticateUser(usuario, password) ) {
 
                     Intent intent = new Intent(Login.this, MainActivity.class);
                     intent.putExtra("usuario", usuario);
-                    //Toast.makeText(Login.this, "Usuario obtenido " + usuario, Toast.LENGTH_SHORT).show();
+                    ((UserTemporal) getApplication()).setUserTemporal(usuario);
                     dataManager.close();
                     startActivity(intent);
                     finish();

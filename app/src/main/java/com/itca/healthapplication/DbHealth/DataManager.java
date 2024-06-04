@@ -14,7 +14,6 @@ public class DataManager {
             dbHelper = new DatabaseHelper(context);
             database = dbHelper.getWritableDatabase();
         }
-
         public void open() {
             database = dbHelper.getWritableDatabase();
         }
@@ -22,8 +21,6 @@ public class DataManager {
         public void close() {
             dbHelper.close();
         }
-
-        public String userTemporal;
 
 
     public long insertUser(String usuario, String correo, String password) {
@@ -56,14 +53,12 @@ public class DataManager {
 
         String selection = Users_table.COLUMN_USUARIO + " = ?";
         String[] selectionArgs = {username};
-        userTemporal = username;
 
         return database.query(
                 Users_table.TABLE_NAME,
                 columns,
                 selection,
                 selectionArgs,
-                userTemporal,
                 null,
                 null,
                 null

@@ -29,16 +29,12 @@ public class MainActivity extends AppCompatActivity {
         Audio = findViewById(R.id.Audio);
         Video = findViewById(R.id.Video);
 
-        Intent valor = getIntent();
-        String valorUsuario = valor.getStringExtra("usuario");
         //Toast.makeText(MainActivity.this, "Usuario obtenido " + valorUsuario, Toast.LENGTH_SHORT).show();
 
         perfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String auxValor = valorUsuario;
                 Intent intent = new Intent(MainActivity.this, Perfil.class );
-                intent.putExtra("usuario", auxValor);
                 //Toast.makeText(MainActivity.this, "Usuario obtenido " + auxValor, Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
@@ -83,7 +79,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }
-

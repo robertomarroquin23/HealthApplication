@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.itca.healthapplication.Class.UserTemporal;
 import com.itca.healthapplication.DbHealth.DataManager;
 import com.itca.healthapplication.DbHealth.Users_table;
 
@@ -25,8 +27,6 @@ public class Perfil extends AppCompatActivity {
         setContentView(R.layout.activity_perfil);
         dataManager = new DataManager(this);
         dataManager.open();
-        Intent intent = getIntent();
-        String user = intent.getStringExtra("usuario");
 
         flecha = findViewById(R.id.ivFlecha);
         btGuardar = findViewById(R.id.btGuardar);
@@ -44,7 +44,8 @@ public class Perfil extends AppCompatActivity {
         etNacionalidad.setEnabled(false);
         btGuardar.setEnabled(false);
 
-        Cursor cursor = dataManager.getUserData(user);
+        String userTemporal = ((UserTemporal) getApplication()).getUserTemporal();
+        Cursor cursor = dataManager.getUserData(userTemporal);
 
         if (cursor != null && cursor.moveToFirst()) {
             String usuario = cursor.getString(0);
@@ -75,7 +76,7 @@ public class Perfil extends AppCompatActivity {
                 btGuardar.setEnabled(true);
                 btEditar.setEnabled(false);
 
-                Cursor cursor = dataManager.getUserData(user);
+                Cursor cursor = dataManager.getUserData(etUsuario.getText().toString());
 
                 if (cursor != null && cursor.moveToFirst()) {
                     String altura = cursor.getString(cursor.getColumnIndexOrThrow(Users_table.COLUMN_ALTURA));
@@ -114,21 +115,20 @@ public class Perfil extends AppCompatActivity {
                     Toast.makeText(Perfil.this, "Rellene todos los campos", Toast.LENGTH_SHORT).show();
 
                 }else{
-                        dataManager.updateUserData(user, nuevoUsuario, nuevaAltura, nuevoPeso, nuevaEdad, nuevaNacionalidad);
+                    dataManager.updateUserData(userTemporal, nuevoUsuario, nuevaAltura, nuevoPeso, nuevaEdad, nuevaNacionalidad);
 
-                        Toast.makeText(Perfil.this, "Datos actualizados correctamente", Toast.LENGTH_SHORT).show();
-                        etUsuario.setEnabled(false);
-                        etAltura.setEnabled(false);
-                        etPeso.setEnabled(false);
-                        etEdad.setEnabled(false);
-                        etNacionalidad.setEnabled(false);
-                        btGuardar.setEnabled(false);
-                        btEditar.setEnabled(true);
-                        String usr = etUsuario.getText().toString().trim();
-                        Intent intent = new Intent(Perfil.this, MainActivity.class );
-                        intent.putExtra("usuario", usr);
-                        dataManager.close();
-                        startActivity(intent);
+                    Toast.makeText(Perfil.this, "Datos actualizados correctamente", Toast.LENGTH_SHORT).show();
+                    etUsuario.setEnabled(false);
+                    etAltura.setEnabled(false);
+                    etPeso.setEnabled(false);
+                    etEdad.setEnabled(false);
+                    etNacionalidad.setEnabled(false);
+                    btGuardar.setEnabled(false);
+                    btEditar.setEnabled(true);
+                    Intent intent = new Intent(Perfil.this, MainActivity.class );
+                    ((UserTemporal) getApplication()).setUserTemporal(etUsuario.getText().toString());
+                    dataManager.close();
+                    startActivity(intent);
                 }
             }
         });
