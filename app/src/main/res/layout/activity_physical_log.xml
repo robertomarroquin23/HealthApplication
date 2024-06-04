@@ -9,6 +9,7 @@
         android:id="@+id/editTextTipoEjercicio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="#00695C"
         android:hint="Tipo de Ejercicio"
         android:inputType="text"/>
 
@@ -16,13 +17,16 @@
         android:id="@+id/editTextDuracion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Duración (min)"
-        android:inputType="number"/>
+        android:textColorHint="#00695C"
+        android:hint="@string/duraci_n_min"
+        android:inputType="number"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextIntensidad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="#00695C"
         android:hint="Intensidad"
         android:inputType="text"/>
 
@@ -31,6 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Calorías Quemadas"
+        android:textColorHint="#00695C"
         android:inputType="numberDecimal"/>
 
     <Button
@@ -54,6 +59,13 @@
     <ListView
         android:id="@+id/listViewEntrenamientos"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="268dp"
+        android:textColor="@color/black"/>
 
+    <ImageView
+        android:id="@+id/btnback"
+        android:layout_width="81dp"
+        android:layout_height="109dp"
+        android:src="@drawable/flecharegreso"
+        android:contentDescription="@string/todo" />
 </LinearLayout>
