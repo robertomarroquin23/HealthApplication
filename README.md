@@ -18,11 +18,9 @@ Aplicación que ayuda a los usuarios a mantenerse saludables y en forma a travé
   • Registro de ejercicios y entrenamiento: Permite a los usuarios registrar sus entrenamientos y actividades 
     físicas, incluyendo el tipo de ejercicio, la duración, la intensidad y las calorías quemadas.
 		
-  • Recordatorios de medicamentos y vitaminas: Notifica a los usuarios cuándo deben tomar sus 
-    medicamentos o vitaminas, con la posibilidad de personalizar alarmas y notificaciones.
-		
-  • Consejos personalizados de dieta y sueño: Ofrece consejos personalizados para mejorar la dieta y el sueño 
-    del usuario, basados en su perfil, historial y objetivos.
+ 
+  • Articulos de salud: Ofrece articulos de salud a para  el sueño,higiene dental , etc. 
+    
 
     
 **Activities:**
@@ -33,28 +31,20 @@ Aplicación que ayuda a los usuarios a mantenerse saludables y en forma a travé
     objetivos de salud. (ENOC)
 		
   • Registro de actividad física: Permite a los usuarios registrar manualmente distancia recorrida y calorías 
-    quemadas. (ROBERTO) (Done)
+    quemadas. (ROBERTO)
 		
   • Registro de ejercicios y entrenamiento: Permite a los usuarios registrar sus entrenamientos y actividades 
-    físicas, incluyendo el tipo de ejercicio, la duración, la intensidad y las calorías quemadas. (ROBERTO) (Done)
+    físicas, incluyendo el tipo de ejercicio, la duración, la intensidad y las calorías quemadas. (ROBERTO)
 		
-  • Calendario de actividad: Muestra un calendario con la actividad física del usuario, incluyendo los pasos, la 
-    distancia recorrida y las calorías quemadas.
-		
-  • Establecimiento de objetivos: Permite a los usuarios establecer objetivos de salud personalizados, como 
-    perder peso, aumentar la masa muscular o mejorar su condición física.
-		
-  • Seguimiento del progreso: Muestra el progreso del usuario hacia sus objetivos de salud mediante gráficos 
-    y estadísticas.
 		
   • Consejos de salud: Ofrece consejos personalizados para mejorar la dieta, el sueño y otros aspectos de la 
     salud del usuario. (RENE)
 		
-  • Recordatorios de medicamentos y vitaminas: Notifica a los usuarios cuándo deben tomar sus 
-    medicamentos o vitaminas, con la posibilidad de personalizar alarmas y notificaciones. 
-		
-  • Foro de salud: Un espacio donde los usuarios pueden compartir sus experiencias, hacer preguntas y recibir 
-    apoyo de otros usuarios. (RENE)
+  • Foro de salud: Un espacio donde los usuarios pueden ver la importancia de ciertos habitos de higiene y salud. (RENE)
+
+   • Apartado de videos de rutinas para ejercicios 
+
+   • Apartado de audios de relajacion para rutinas de yoga o meditacion
     
 **Tecnologías a implementar:**
 
@@ -65,23 +55,17 @@ Aplicación que ayuda a los usuarios a mantenerse saludables y en forma a travé
 	
   • Activities e intents: Para gestionar el flujo de la aplicación de forma eficiente.
 	
-  •  Gráficos en Android: Para mostrar datos de salud y progreso de forma visual y comprensible.
 	
   • Entradas en Android: Teclado para ingresar información y pantalla táctil para interactuar con la aplicación.
 	
-  • Notificaciones: Para avisar al usuario de sus objetivos diarios, recordatorios de medicamentos, nuevos 
-    consejos de salud o mensajes en el foro.
 		
   • Ciclo de vida de una actividad: Para controlar el comportamiento de la aplicación y optimizar el uso de 
     recursos.
 		
-  • Seguridad: Encriptación de datos para proteger la información personal y médica del usuario.
 	
-  • Almacenamiento de datos: Interno y externo para guardar el historial de actividad física, datos de 
-    entrenamiento, objetivos de salud y otros datos del usuario.
+  • Almacenamiento de datos: Interno  para guardar el historial de actividad física, datos de 
+    entrenamiento,y otros datos del usuario.
 		
-  • Internet: Http y servicios web para la comunicación con el servidor, descarga de consejos de salud y 
-    sincronización con dispositivos de fitness.
 
 **Consideraciones:**
 
@@ -94,9 +78,5 @@ Aplicación que ayuda a los usuarios a mantenerse saludables y en forma a travé
   • Precisión: La aplicación debe proporcionar datos precisos y confiables sobre la actividad física y la salud 
     del usuario.
 		
-  • Privacidad y seguridad: La aplicación debe proteger la privacidad y seguridad de los datos personales y 
-    médicos del usuario.
-    
-**Funcionalidades adicionales:**
+ 
 
-  • Planificador de comidas: Para ayudar a los usuario
