@@ -5,5 +5,7 @@
     <string name="agregar">Agregar</string>
     <string name="actualizar">Actualizar</string>
     <string name="eliminar">Eliminar</string>
+    <string name="todo">TODO</string>
+    <string name="duraci_n_min">Duración (min)</string>
 
 </resources>
