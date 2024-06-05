@@ -59,8 +59,6 @@ public class Perfil extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Perfil.this, MainActivity.class);
-                String usr = etUsuario.getText().toString().trim();
-                intent.putExtra("usuario", usr);
                 startActivity(intent);
             }
         });

@@ -6,15 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.itca.healthapplication.Class.UserTemporal;
 import com.itca.healthapplication.View.MainView.ExerciseTrainingLog;
 import com.itca.healthapplication.View.MainView.PhysicalActivityLog;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView perfil, consejos, rgEntremiento, rgFisica ,Audio,Video;
-
+    ImageView perfil, consejos, rgEntremiento, rgFisica ,Audio,Video, flecha, perfilMain;
+    TextView tvBienvenida;
 
 
     @Override
@@ -28,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
         rgFisica = findViewById(R.id.ivFisica);
         Audio = findViewById(R.id.Audio);
         Video = findViewById(R.id.Video);
+        flecha = findViewById(R.id.ivFlecha);
+        perfilMain  =findViewById(R.id.ivPerfilMain);
+        tvBienvenida = findViewById(R.id.tvBienvenida);
+
+        String userTemporal = ((UserTemporal) getApplication()).getUserTemporal();
+
+        tvBienvenida.setText("Bienvenido " + userTemporal);
 
         //Toast.makeText(MainActivity.this, "Usuario obtenido " + valorUsuario, Toast.LENGTH_SHORT).show();
 
@@ -36,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Perfil.class );
                 //Toast.makeText(MainActivity.this, "Usuario obtenido " + auxValor, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+        perfilMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Perfil.class );
                 startActivity(intent);
             }
         });
@@ -76,6 +93,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, audiosRelajacion.class );
+                startActivity(intent);
+            }
+        });
+
+        flecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Login.class);
                 startActivity(intent);
             }
         });
