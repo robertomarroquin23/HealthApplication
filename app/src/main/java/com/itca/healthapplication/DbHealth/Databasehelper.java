@@ -2,6 +2,7 @@ package com.itca.healthapplication.DbHealth;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -19,7 +20,8 @@ class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-
+        Log.d(TAG, "onCreate: Creating database and table");
+        db.execSQL(Users_table.SQL_CREATE);
         db.execSQL(Article_table.SQL_CREATE);
         preLoadData(db);
     }
@@ -27,11 +29,10 @@ class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         //db.execSQL(Article_table.SQL_DELETE);
+        db.execSQL(Users_table.SQL_DELETE);
 
         onCreate(db);
     }
-
-
 
     private void preLoadData(SQLiteDatabase db) {
 
@@ -94,8 +95,4 @@ class DatabaseHelper extends SQLiteOpenHelper {
                 "Diferentes personas necesitan diferentes cantidades de horas de sueño. La mayoría de los adultos necesitan de 7 a 8 horas de sueño por noche para una buena salud y funcionamiento mental. Algunos adultos necesitan hasta 9 horas de sueño por noche.');");
 
     }
-
-
-
-
 }

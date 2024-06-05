@@ -1,6 +1,8 @@
 package com.itca.healthapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.util.Linkify;
 import android.view.View;
@@ -9,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.itca.healthapplication.Class.UserTemporal;
+import com.itca.healthapplication.DbHealth.DataManager;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -22,6 +26,7 @@ public class Login extends AppCompatActivity {
     Button btConfirmar;
     EditText etUser, etPass;
     TextView registrar;
+    DataManager dataManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,25 +38,35 @@ public class Login extends AppCompatActivity {
         etPass = findViewById(R.id.etPasswd);
         registrar = findViewById(R.id.tvRegistrar);
 
-        btConfirmar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (etUser.getText().toString().equals("Rene") && etPass.getText().toString().equals("1234"))
-                {
-                    Intent intent = new Intent(Login.this, MainActivity.class);
-                    startActivity(intent);
-                }else{
-
-                    Toast.makeText(Login.this, "Usuario o contraseña incorrecta", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+        dataManager = new DataManager(this);
+        dataManager.open();
 
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this, Registrar.class);
                 startActivity(intent);
+            }
+        });
+
+        btConfirmar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String usuario = etUser.getText().toString().trim();
+                String password = etPass.getText().toString().trim();
+
+                if(dataManager.authenticateUser(usuario, password) ) {
+
+                    Intent intent = new Intent(Login.this, MainActivity.class);
+                    intent.putExtra("usuario", usuario);
+                    ((UserTemporal) getApplication()).setUserTemporal(usuario);
+                    dataManager.close();
+                    startActivity(intent);
+                    finish();
+
+                } else {
+                    Toast.makeText(Login.this, "Usuario o contraseña incorrecta", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

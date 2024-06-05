@@ -8,18 +8,33 @@
     tools:context=".Registrar"
     android:background="@drawable/fondo">
 
-    <Button
-        android:id="@+id/btGuardar"
-        android:layout_width="120dp"
-        android:layout_height="57dp"
-        android:backgroundTint="@color/green"
-        android:text="Guardar"
+    <EditText
+        android:id="@+id/etConfirmarPasswd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Confirme su contraseña"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.698" />
+        app:layout_constraintVertical_bias="0.641" />
+
+    <EditText
+        android:id="@+id/etPasswd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Ingrese su contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.556" />
 
     <EditText
         android:id="@+id/etUsuario"
@@ -37,37 +52,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.396" />
 
-    <EditText
-        android:id="@+id/etUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Confirmar contraseña"
-        android:textColor="@color/black"
-        android:textColorHint="@color/hint_gray"
-        android:inputType="text"
+
+    <Button
+        android:id="@+id/btGuardar"
+        android:layout_width="120dp"
+        android:layout_height="57dp"
+        android:backgroundTint="@color/green"
+        android:text="Guardar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.575" />
+        app:layout_constraintVertical_bias="0.75" />
 
     <EditText
-        android:id="@+id/etUsuario"
+        android:id="@+id/etCorreo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Correo"
+        android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/hint_gray"
-        android:hint="Contraseña"
-        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintVertical_bias="0.478"/>
 
     <ImageView
         android:id="@+id/ivLogin"
@@ -90,6 +102,6 @@
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintVertical_bias="0.976"
         app:srcCompat="@drawable/flecharegreso" />
 </androidx.constraintlayout.widget.ConstraintLayout>
