@@ -44,6 +44,7 @@ public class PhysicalActivityLog extends AppCompatActivity {
         Button buttonUpdate = findViewById(R.id.buttonUpdate);
         Button buttonDelete = findViewById(R.id.buttonDelete);
         btnRegresar = findViewById(R.id.btnback);
+
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
